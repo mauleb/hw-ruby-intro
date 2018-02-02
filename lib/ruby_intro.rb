@@ -41,15 +41,26 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if /^[AEIOUaeiou].*/.match(s) then
+    return false
+  elsif /^[a-zA-Z].*/.match(s) then
+    return true
+  else
+    return false
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if /^[01]+$/.match(s) then
+    numeric = Integer("0b#{s}")
+    return numeric % 4 == 0
+  else
+    return false
+  end
 end
 
 # Part 3
