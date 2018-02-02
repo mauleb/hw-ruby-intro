@@ -1,17 +1,41 @@
 # When done, submit this entire file to the autograder.
 
-# Part 1
+# Part 1arr.each
 
 def sum arr
-  # YOUR CODE HERE
+  sum = 0
+  arr.each {|x| sum += x }
+  return sum
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  sorted = arr.sort {|x,y| y <=> x }
+  if sorted.length == 0 then
+    return 0
+  elsif sorted.length == 1 then
+    return sorted[0]
+  else
+    return sorted[0]+sorted[1]
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.length < 2 then
+    return false
+  else
+    arr.each {
+      |x|
+      trial = n-x
+      if arr.include?(trial) then
+        if trial == x then
+          return arr.count(trial) > 1
+        else
+          return true
+        end
+      end
+    }
+    return false
+  end
 end
 
 # Part 2
